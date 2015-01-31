@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"application.js",
+"sourceRoot":"/",
+"sources":["src/Main.hx"],
+"names":[],
+"mappings":";;;;;;;;YAUO,DACN;CAAY,UAAY;EACX,UAAY,DACb,HACH,CACC,KACK,NACL,DACA;EAGT,UAAM;;;UAKT;;;;;WAEQ,AACN;YAAM;;;;;;"
+}

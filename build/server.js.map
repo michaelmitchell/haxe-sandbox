@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"server.js",
+"sourceRoot":"/",
+"sources":["extern/js/node/NodeJS.hx","src/server/Main.hx","extern/js/node/Http.hx","extern/js/node/modules/Express.hx"],
+"names":[],
+"mappings":";;;;4BAsBc,jBACb;CAAe;;6BAOF,lBACb;CAAe;;;;;;mBCTT,RAAgB;CACR;CACH;CACG,AAAqB;CAEnC,AAAY;CAEZ,AAAa,AAAQ,EAAW;CAChC,AAAa,AAAc;CAE3B,AAAa,AAAI,0BAChB;CAAiB;;CAGP,AAAkB;CACrB;CAAa,AAAK,AAAa,KAAK;CAE5C,AAAY;;ACPJ;ACwBA;AACA;AACA;;;;"
+}
