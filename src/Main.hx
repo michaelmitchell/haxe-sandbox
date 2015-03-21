@@ -15,7 +15,6 @@ class Main {
 				width: 640,
 				height: 480,
 				bodyPadding: 5,
-				title: 'Hello World',
 				html : 'Hello <b>World</b>...'
 			});
 
@@ -24,11 +23,45 @@ class Main {
 	}
 }
 
-class MyPanel extends Panel {
-
-	public function something() : Void {
-		trace("hi");
+class MyMixin {
+	
+	public function doMixinStuff() {
+		trace('I am a mixed in function');
 	}
 
 }
 
+class MyPanel extends Panel {
+
+	// use exts extra stuff for class creation
+	static function __init__() : Void {
+		var config = {
+			mixins: {
+				'mymix': MyMixin 
+			}
+		};
+
+		ExtClass.create(MyPanel, config);
+
+		// prevents ext from using its extend preprocessor
+		untyped __js__("MyPanel.extend = function () {}");
+		untyped __js__("MyPanel.triggerExtended = function () {}");
+
+		ExtClass.process(MyPanel, config);
+	}
+
+	var title = 'Hello World';
+
+	public function new(options) {
+		super(options);
+
+		this.doMixinStuff();
+	}
+
+	// included via ExtJS mixin
+	@:extern function doMixinStuff() {}; //ignored in output
+
+	function something() : Void {
+		trace("hi");
+	}
+}

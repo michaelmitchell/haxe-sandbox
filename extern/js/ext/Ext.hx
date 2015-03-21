@@ -31,3 +31,9 @@ extern class Ext {
 	public static function onReady(fn : Dynamic) : Void;
 
 }
+
+@:native('Ext.Class')
+extern class ExtClass {
+	public static function create(klass: Dynamic, data: Dynamic): Void;
+	public static function process(klass: Dynamic, data: Dynamic, ?onCreated: Dynamic): Void;
+}
