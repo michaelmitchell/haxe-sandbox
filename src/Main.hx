@@ -33,6 +33,11 @@ class MyMixin {
 
 class MyPanel extends Panel {
 
+	// override these to prevent exts extend functionality in favour of haxes
+	@:extern static dynamic function extend(): Void {} 
+
+	@:extern static dynamic function triggerExtended(): Void {}
+
 	// use exts extra stuff for class creation
 	static function __init__() : Void {
 		var config = {
@@ -43,9 +48,8 @@ class MyPanel extends Panel {
 
 		ExtClass.create(MyPanel, config);
 
-		// prevents ext from using its extend preprocessor
-		untyped __js__("MyPanel.extend = function () {}");
-		untyped __js__("MyPanel.triggerExtended = function () {}");
+		MyPanel.extend = function () {};
+		MyPanel.triggerExtended = function () {};
 
 		ExtClass.process(MyPanel, config);
 	}

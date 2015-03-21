@@ -31,8 +31,10 @@ MyPanel.prototype = $extend(Ext.panel.Panel.prototype,{
 });
 var config = { mixins : { mymix : MyMixin}};
 Ext.Class.create(MyPanel,config);
-MyPanel.extend = function () {}
-MyPanel.triggerExtended = function () {}
+MyPanel.extend = function() {
+};
+MyPanel.triggerExtended = function() {
+};
 Ext.Class.process(MyPanel,config);
 Main.main();
 })();
